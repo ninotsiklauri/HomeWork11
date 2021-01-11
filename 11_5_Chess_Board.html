@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board1</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="560" height="560" style="border:1px solid black;"></canvas>
+    <script>
+        var c=document.getElementById("myCanvas");
+        var ctx=c.getContext("2d");
+            
+        for(i=0; i<8; i++){
+            for(j=0; j<8; j++){
+                ctx.moveTo(0,70*i);
+                ctx.lineTo(560,70*i);
+                ctx.stroke();
+            
+                ctx.moveTo(70*j,0);
+                ctx.lineTo(70*j,560);
+                ctx.stroke();
+                var left = 0;
+                for(var a=0; a<8; a++) {
+                    for(var b=0; b<8; b+=2) {
+                        startX = b * 70;
+                        if(a%2==0) startX = (b+1) * 70;
+                        ctx.fillRect(startX + left,(a*70) ,70,70);
+                    }}
+                }}
+    </script>
+</body>
+</html>

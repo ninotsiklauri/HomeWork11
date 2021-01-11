@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="myCanvas4"></canvas>
+    
+    <script>
+        var c = document.getElementById("myCanvas4");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.moveTo(220,10);
+        ctx.lineTo(70,10);
+        ctx.lineTo(70,140);
+        ctx.lineTo(220,140);
+        ctx.lineTo(220,10);
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.closePath();
+        //--------------------------------------
+        ctx.beginPath();
+        ctx.moveTo(180,25);
+        ctx.lineTo(85,25);
+        ctx.lineTo(85,110);
+        ctx.closePath();
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+        ctx.fillStyle = "black";
+        ctx.fill();
+        //--------------------------------------
+        ctx.beginPath();
+        ctx.moveTo(205,35);
+        ctx.lineTo(205,125);
+        ctx.lineTo(105,125);
+        ctx.closePath();
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_8</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <script>
+        const colors = ['green', 'blue', 'red', 'yellow', 'purple', 'aqua', 'brown', 'black'];
+        const container = document.querySelector(".container");
+        const box = document.querySelector(".box");
+        box.style.left = "0px";
+        box.style.top = "0px";
+
+        function createBox(l, t){
+            let newbox = document.createElement("div");
+            // newbox.classList.add('.new-box');
+            newbox.style.width = "50px";
+            newbox.style.height = "50px";
+            newbox.style.position = "absolute";
+            newbox.style.backgroundColor = colors[Math.floor(Math.random() * 8)];
+
+            newbox.style.left = l;
+            newbox.style.top = t;
+            console.log(newbox);
+            container.appendChild(newbox);
+        }
+        function move(){
+            if(box.style.left === "0px" && box.style.top === "0px") createBox(); 
+            if(box.style.left === "500px" && box.style.top === "500px") clearInterval(moveInterval); 
+            if(box.style.left === "500px") {
+                box.style.left = "0px";
+                box.style.top = parseInt(box.style.top) + 50 + "px";
+                createBox(box.style.left, box.style.top);
+            } else {
+                box.style.left = parseInt(box.style.left) + 50 + "px"; 
+                createBox(box.style.left, box.style.top);
+            }
+        }
+        const moveInterval = setInterval(move, 50);
+    </script>
+</body>
+</html>

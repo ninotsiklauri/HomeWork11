@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_1,2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+        
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(70,70,50,0,2*Math.PI);
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.arc(50,55,8,0,2*Math.PI);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(90,55,8,0,2*Math.PI);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(70,70,40,0,1*Math.PI);
+        ctx.stroke();
+        //---------------------------------------------------------
+        ctx.beginPath();
+        ctx.arc(220,70,50,0,2*Math.PI);
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.arc(200,55,8,0,2*Math.PI);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(240,55,8,0,2*Math.PI);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(220,95,20,3.2,2*Math.PI);
+        ctx.stroke();
+    </script> 
+</body>
+</html>
